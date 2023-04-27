@@ -8,7 +8,7 @@ chmod +x onelist
 echo FROM scratch > Dockerfile
 echo ADD ./ / >> Dockerfile
 echo EXPOSE 5245 >> Dockerfile
-echo CMD ["ping", "baidu.com"] >> Dockerfile
+echo CMD [\"/onelist\",\"server\",\"--no-prefix\"] >> Dockerfile
 
 ./onelist -run config
 sed -i 's#UserEmail=xxxx.@qq.com#UserEmail=123456@qq.com#g' config.env
